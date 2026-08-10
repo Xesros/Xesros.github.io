@@ -1,5 +1,5 @@
 -----
 layout: page
-title: "Artifact One"
-permalink: /Software-Design-Databases
+title: "Software Design/Engineering and Databases"
+permalink: /SDE_DB
 -----

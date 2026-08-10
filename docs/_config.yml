@@ -23,12 +23,12 @@ email: xersos.interactive@gmail.com
 tagline: "Always Learning"
 description: >- # this means to ignore newlines until "baseurl:"
   ePortfolio that will be continously updated.
-baseurl: "/Xesros.github.io" # the subpath of your site, e.g. /blog
+baseurl: "/Xesros.github.io/" # the subpath of your site, e.g. /blog
 url: "https://Xesros.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Xesros
 domain: Xesros.github.io
 # Build settings
-remote_theme: pages-themes/midnight@v0.2.0
+theme: jekyll-theme-Slate
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
