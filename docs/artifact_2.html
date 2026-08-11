@@ -1,0 +1,108 @@
+<!Doctype HTML>
+<!--
+	Uses Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Data Structures and Algorithms</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/nopscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+    
+    <div id="wrapper">
+        <header id="header">
+            <a href="index.html" class="logo"> XESROS </a>
+        </header>
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="artifact_1.html">Software Design/Engineering</a></li>
+                <li><a href="artifact_2.html">Data Structures + Algorithms</a></li>
+                <li><a href="artifact_3.html">Databases</a></li>
+                <li><a href="scs.html">Coding Standard</a></li>
+            </ul>
+        </nav>
+
+        <div id="main">
+            <section class="post">
+                <header class="major"><i>Data Structures and Algorithms (Narrative)</i></header>
+                <h2>About the Project</h2>
+                <p style="text-indent: 5%;">This artifact is a course catalog system. 
+                    This project was created over a year ago in CS: 300 – DSA: Data Structures and Algorithms. 
+                    The system uses a particular data structure to hosts, store course objects, and with the intended purpose of interfacing with a school. 
+                    The program should be able to print a sorted list of all the courses, 
+                    store the courses in a specific object, and be able to search for a course in the data structure. 
+                    For more details and direct access to files about this project go <a>here</a>. </p>
+          
+            </section>
+            <section id="Category">
+                <h2>Purpose</h2>
+                <p>I’ve included this artifact to showcase growth and my knowledge/ability to utilize the strengths of data structures and algorithms. 
+                    Growth in the form of the quality of code and the assessment of motives for a project. 
+                    The previous implementation of this project I had selected a Hash Table with a selection sort algorithm to handle catalog system. </p>
+                <P> In this enhancement, I have swapped to a Binary Search Tree. It is a bit interesting comparing these two structures. 
+                    A hash table is quicker in terms of search, insertion, and deletion. However, accessing and sorting a hash table is not exactly a quick implementation; 
+                    Sort algorithms also have their own time complexities, and the selection sort is quite slow. 
+                    A Binary Search Tree has a consistent log(n) Time complexity between access, search, insertion, and deletion. 
+                    It also does not need a supporting sort algorithm and can be left from right to left through its own structure instead. 
+                    One other questionable aspect is the hash in general. The structure’s hash may have collisions, but does the catalog need hashing?</P>
+                <p>Lastly, some other secondary objectives I have for this project are better documentation, structure, and maybe some more functionality. 
+                    Which means I will have to revise or make a new evaluation and better modularize the program files. </p>
+
+                <hr>
+                <h1>Examples of Project Improvements</h1>
+                <h3>Project Structure</h3>
+                <p>GitHub and Examples</p>
+                <p>Include Images</p>
+            </section>
+            <section id="Reflection">
+                <h2>Reflection</h2>
+                <p>The process of enhancing the project has taught me the importance of computer science practices and documentation. 
+                    The original project is fixed all into one document. A single file handling multiple functions, data objects, and interface quickly bloats. 
+                    The code review and my ability to navigate the whole project were inhibited by several hundred lines of code being present at once. 
+                    I began my process by properly naming my project and compartmentalizing the functionality and objects of the project. 
+                    This immediately enhances the readability of my project.</p>
+                <p>My next actions were converting the system’s internal data structure. 
+                    While I keep the overarching concept of functionality, the literal implementation requires an entire replacement. 
+                    There is no need to keep the hash table, hash function, and the selection sort algorithm. 
+                    I replaced them with a binary search tree which does not need a hash nor a sort algorithm as it can be read in a sorted order. 
+                    Once rebuilt, I tie the background functionality to the terminal interface so that a user can use the system.</p>
+                <p>Another aspect I came to realize that needed to be tweaked was my custom csv parser. 
+                    The project previously required that I make one for the project. In my review, I realized that I implemented an antipattern for my design. 
+                    I would edit the iterator/conditional value in the loop itself while editing the data I was actively reading. 
+                    My new parser uses a copy and avoids modifying the conditional values within the loop.</p>
+                <p>The documentation that coincides with the base project is about the technical reasons and potential of data structures and solutions. 
+                    There was little support in how the project was actually implemented just that it used a certain structure and algorithm with the reasons why. 
+                    I also did not upload the data. For some reason, I forgot the data that was used to test the project. 
+                    In the end, this project was not a state to be recreated. 
+                    Luckily, I managed to recover the data. For my portfolio and the future, I avoid these mistakes.</p>
+            </section>
+        
+        <div section id="Code Review">
+                
+        <h3><a href="">Placeholder</a></h3>
+              <div class="box">
+                <p>Potential for another section.</p>
+                </div>
+
+                </div>
+            </section>
+            <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+</body>
+
+</html>
