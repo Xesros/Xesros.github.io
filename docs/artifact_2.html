@@ -40,17 +40,24 @@
                     The system uses a particular data structure to hosts, store course objects, and with the intended purpose of interfacing with a school. 
                     The program should be able to print a sorted list of all the courses, 
                     store the courses in a specific object, and be able to search for a course in the data structure. 
-                    For more details and direct access to files about this project go <a>here</a>. </p>
+                    For more details and direct access to files about this project go <a href="https://github.com/Xesros/Xesros.github.io/tree/main/Course_Catalog">here</a>. </p>
           
             </section>
             <section id="Category Purpose">
+                <div>
+                    <span class="image fit">
+                        <img src="assets/images/BIG_O.png" alt="Big O Complexity Chart" />
+                        <h6 style="align-items: end;">Image from <a href="https://www.bigocheatsheet.com/">Big O CheatSheet</a>.</h6>
+                    </span>    
+                </div>
+                <hr>
                 <h2>Purpose</h2>
                 <p>I’ve included this artifact to showcase growth of my knowledge and ability to utilize the strengths of data structures and algorithms. 
                     Growth in the form of the quality of code and the assessment of motives for a project. 
                     The previous implementation of this project I had selected a Hash Table with a selection sort algorithm to handle catalog system. </p>
                 <P> In this enhancement, I have swapped the core data structure to a Binary Search Tree (BST). It is a bit interesting comparing these two structures. 
                     A hash table is quicker in terms of search, insertion, and deletion. However, accessing and sorting a hash table is not exactly a quick implementation; 
-                    Sort algorithms also have their own time complexities, and the selection sort is quite slow. 
+                    Sort algorithms also have their own time complexities, and the selection sort is quite slow at O(n^2). 
                     A Binary Search Tree has a consistent log(n) Time complexity between access, search, insertion, and deletion. 
                     It also does not need a supporting sort algorithm. Instead it is read left to right through its own structure. The time difference between
                     these sorts is that I utilized a selection sort which is much slower at a time complexity of O(n^2) compared to O(n) of the BST.
@@ -59,20 +66,10 @@
                 <p>Lastly, some other secondary objectives I have for this project are better documentation, structure, and maybe some more functionality. 
                     Which means I will have to revise or make a new evaluation and better modularize the program files. </p>
 
-                <hr>
-                <h1>Examples of Project Improvements</h1>
-                <h3>Project Structure</h3>
-                <p>GitHub and Examples</p>
-                <div>
-                    <span class="image fit">
-                        <img src="assets/images/BIG_O.png" alt="Big O Complexity Chart" />
-                        <h6 style="align-items: end;">Image from <a href="https://www.bigocheatsheet.com/">Big O CheatSheet</a>.</h6>
-                    </span>
-                    
-                </div>
-                <p>Include Images</p>
+                
             </section>
             <section id="Reflection">
+                
                 <h2>Reflection</h2>
                 <p><span class="image left"><img src="assets/images/File Structure.png" alt="Photo of Modularized File Structure"/></span>The process of enhancing the project has taught me the importance of computer science practices and documentation. 
                     The original project is fixed all into one document. A single file handling multiple functions, data objects, and interface quickly bloats. 
@@ -84,7 +81,8 @@
                     There is no need to keep the hash table, hash function, and the selection sort algorithm. 
                     I replaced them with a binary search tree which does not need a hash nor a sort algorithm as it can be read in a sorted order. 
                     Once rebuilt, I tie the background functionality to the terminal interface so that a user can use the system.</p>
-                <p><span class="image right"><a href=""><img src="assets/images/NewCSVParser.png" alt="Code of the new CSV Parser."/></a></span>Another aspect I came to realize that needed to be tweaked was my custom csv parser. 
+                <p><span class="image right"><a href="https://github.com/Xesros/Xesros.github.io/blob/main/Course_Catalog/Enhanced%20Project/Code%26Data/MyCourseCSVParser.cpp">
+                    <img src="assets/images/NewCSVParser.png" alt="Code of the new CSV Parser."/></a></span>Another aspect I came to realize that needed to be tweaked was my custom csv parser. 
                     The project previously required that I make one for the project. In my review, I realized that I implemented an antipattern for my design. 
                     I would edit the iterator/conditional value in the loop itself while editing the data I was actively reading. 
                     My new parser uses a copy and avoids modifying the conditional values within the loop.</p>
@@ -95,6 +93,10 @@
                     Luckily, I managed to recover the data. For my portfolio and the future, I will avoid these mistakes.</p>
             </section>
         
+            <section id="How To Actually use the Project.">
+                <h2>How To </h2>
+
+            </section>
         <div section id="Code Review">
                 
         <h3><a href="">Course Outcomes</a></h3>
@@ -103,7 +105,7 @@
                 </div>
 
                 </div>
-            </section>
+        
             <!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
