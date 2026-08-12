@@ -95,16 +95,37 @@
         
             <section id="How To Actually use the Project.">
                 <h2>How To </h2>
-
-            </section>
-        <div section id="Code Review">
                 
-        <h3><a href="">Course Outcomes</a></h3>
-                <div class="box">
-                    <p>Potential for another section.</p>
-                </div>
+                <h6>This project was created in visual studio, so this will adhere to said IDE.</h6>
+                    <div class="col-6 col-12-small">
+						<h3>Instructions</h3>
+							<ul>
+						    	<li>Create an empty project that using the console app template.</li>
+					    		<li> <span class="image right"><img src="assets/images/Total_File_Structure_A2.png"/></span> Copy the files into the project. This can be done by copying the text into created files or importing. Make sure it builds properly.
+                                    .h files goes to header folder, the rest go into the source folder including the csv file (the data). 
+                                </li>
+								<li>Build and Run the program. </li>
+                                <pre><code>Welcome to the course planner.
 
-                </div>
+Option 1: Load Courses from file.
+Option 2: Print Course List
+Option 3: Print a specific Course.
+Option 4: Remove a specific Course.
+Option 9: Exit 
+                                    
+What would you like to do?</code></pre>
+								<li>The program includes a menu. Start with loading the csv file, Option 1 (Enter the corresponding number).</li>
+                                <li>At this point you can now use the other options. </li> 
+                                <li>Option 2 will print all the information in a sorted manner. This is only possible when the data is loaded. </li>
+                                <li>Option 3 will prompt the user for a course code to search in the data structure. For example, "CSCI300". Once inputted, if it exists, it will return a course.</li>    
+                                <li>Option 4 will prompt the user for a course code to delete from the data structure. Once inputted, if it exists, it removes and returns a course.</li>    
+                                <li>Option 9 will safely exit the program.</li>    
+                                <li>Use the last option to exit the program when done.</li>
+							</ul>
+
+
+					</div>
+            </section>
         
             <!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
