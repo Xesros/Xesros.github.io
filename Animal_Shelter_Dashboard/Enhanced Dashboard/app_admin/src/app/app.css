@@ -1,0 +1,15 @@
+.center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.leftLean {
+  display: flex;
+  align-items: left;
+}
+
+.rightLean{
+    display: flex;
+    align-items: right;
+}

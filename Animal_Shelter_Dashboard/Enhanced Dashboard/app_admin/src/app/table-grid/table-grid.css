@@ -1,0 +1,8 @@
+button{
+    margin-left: 40%;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 10px;
+    block-size: 50px;
+    text-align: center;
+}

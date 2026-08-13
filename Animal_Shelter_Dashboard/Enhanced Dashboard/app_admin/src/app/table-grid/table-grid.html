@@ -1,0 +1,35 @@
+<div *ngIf="isLoggedIn()">
+  <button (click)="addAnimal()">Add Animal</button>
+</div>
+
+<mat-paginator [length]="queryLength" [pageSizeOptions]="[15, 20, 50]" showFirstLastButtons
+  (page)="handlePageEvent($event)"></mat-paginator>
+
+<div style="width: 90%; align-items: center; margin: 15;  height: 700px; overflow-x: auto; " style="display: flex;"
+  class="row">
+
+  <mat-table [dataSource]="dataSource" class="" style="width: 90%; ">
+    <!-- Define columns based on 'displayedColumns' array -->
+    <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col" sticky>
+      <mat-header-cell *matHeaderCellDef> {{col | titlecase}} </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row[col] }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="clickedRow(row)"></mat-row>
+
+
+  </mat-table>
+
+
+  <div class="row">
+
+    <div>
+      <app-location-map [locations]="animals"></app-location-map>
+    </div>
+    <div class="rightLean">
+      <app-animal-chart></app-animal-chart>
+    </div>
+  </div>
+
+</div>

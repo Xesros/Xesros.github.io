@@ -1,0 +1,204 @@
+<div class="col-md-4">
+    <h2 class="text-center" style="align-items: center;">Edit Animal Information</h2>
+    <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>Rec_Number: </label>
+            <input type="number" formControlName="rec_num" placeholder="10000 + Number" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['rec_num'].errors}">
+
+            <div *ngIf="submitted && f['rec_num'].errors">
+                <div *ngIf="f['rec_num'].errors?.['required']">
+                    Record Number is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Age Upon Outcome: </label>
+            <input type="text" formControlName="age_upon_outcome" placeholder="Age" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['age_upon_outcome'].errors}">
+
+            <div *ngIf="submitted && f['age_upon_outcome'].errors">
+                <div *ngIf="f['age_upon_outcome'].errors?.['required']">
+                    An age is required.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label>Animal ID: </label>
+            <input type="text" formControlName="animal_id" placeholder="Animal ID" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['animal_id'].errors}">
+
+            <div *ngIf="submitted && f['animal_id'].errors">
+                <div *ngIf="f['animal_id'].errors?.['required']">
+                    An ID is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Animal Type: </label>
+            <input type="text" formControlName="animal_type" placeholder="Animal Type" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['animal_type'].errors}">
+
+            <div *ngIf="submitted && f['animal_type'].errors">
+                <div *ngIf="f['animal_type'].errors?.['required']">
+                    A type is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Breed: </label>
+            <input type="text" formControlName="breed" placeholder="Breed" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['breed'].errors}">
+
+            <div *ngIf="submitted && f['breed'].errors">
+                <div *ngIf="f['breed'].errors?.['required']">
+                    A breed is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Color: </label>
+            <input type="text" formControlName="color" placeholder="color" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['color'].errors}">
+
+            <div *ngIf="submitted && f['color'].errors">
+                <div *ngIf="f['color'].errors?.['required']">
+                    A color is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>DOB: </label>
+            <input type="text" formControlName="date_of_birth" placeholder="DOB" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['date_of_birth'].errors}">
+
+            <div *ngIf="submitted && f['date_of_birth'].errors">
+                <div *ngIf="f['date_of_birth'].errors?.['required']">
+                    A date is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Time: </label>
+            <input type="text" formControlName="datetime" placeholder="DOB" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['datetime'].errors}">
+
+            <div *ngIf="submitted && f['datetime'].errors">
+                <div *ngIf="f['datetime'].errors?.['required']">
+                    A date is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Month & Year: </label>
+            <input type="text" formControlName="monthyear" placeholder="month/year" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['monthyear'].errors}">
+
+            <div *ngIf="submitted && f['monthyear'].errors">
+                <div *ngIf="f['monthyear'].errors?.['required']">
+                    A date is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Name: </label>
+            <input type="text" formControlName="name" placeholder="Goober" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors}">
+
+            <div *ngIf="submitted && f['name'].errors">
+                <div *ngIf="f['name'].errors?.['required']">
+                    A name is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Outcome Subtype: </label>
+            <input type="text" formControlName="outcome_subtype" placeholder="Subtype" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['outcome_subtype'].errors}">
+
+            <div *ngIf="submitted && f['outcome_subtype'].errors">
+                <div *ngIf="f['outcome_subtype'].errors?.['required']">
+                    A subtype is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Outcome Type: </label>
+            <input type="text" formControlName="outcome_type" placeholder="Outcome Type" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['outcome_type'].errors}">
+
+            <div *ngIf="submitted && f['outcome_type'].errors">
+                <div *ngIf="f['outcome_type'].errors?.['required']">
+                    A Type is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Sex Upon Outcome: </label>
+            <input type="text" formControlName="sex_upon_outcome" placeholder="Outcome Sex Type" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['sex_upon_outcome'].errors}">
+
+            <div *ngIf="submitted && f['sex_upon_outcome'].errors">
+                <div *ngIf="f['sex_upon_outcome'].errors?.['required']">
+                    An outcome sex type is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Location Latitude: </label>
+            <input type="number" formControlName="location_lat" placeholder="Outcome Sex Type" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['location_lat'].errors}">
+
+            <div *ngIf="submitted && f['location_lat'].errors">
+                <div *ngIf="f['location_lat'].errors?.['required']">
+                    A Latitude is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Location Longitude: </label>
+            <input type="number" formControlName="location_long" placeholder="Outcome Sex Type" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['location_long'].errors}">
+
+            <div *ngIf="submitted && f['location_long'].errors">
+                <div *ngIf="f['location_long'].errors?.['required']">
+                    A Longitude is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Age in Weeks at Outcome: </label>
+            <input type="number" formControlName="age_upon_outcome_in_weeks" placeholder="Age in Weeks at Outcome"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f['age_upon_outcome_in_weeks'].errors}">
+
+            <div *ngIf="submitted && f['age_upon_outcome_in_weeks'].errors">
+                <div *ngIf="f['age_upon_outcome_in_weeks'].errors?.['required']">
+                    An age in weeks is required.
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex;">
+            <button type="submit" class="btn btn-info">Save Record</button>
+            <button type="button" (click)="deleteRecord()" class="btn btn-info">Delete Record</button>
+        </div>
+        
+    </form>
+</div>
