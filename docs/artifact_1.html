@@ -48,10 +48,12 @@
                 <h2>Purpose</h2>
                 <p>This item was chosen because the initial project is a small-scale full-scale stack application. 
                     Full-stack development requires a board sense of knowledge and skills to properly integrate the different programs and software layers for a functioning application. 
-                    The <a href="">base project</a> has two Python-based files and a Mongo database that it interfaces with. 
-                    The project is very monolithic in its structure. 
-                    There is a file that handles base CRUD operations, and a second file that handles everything else. 
-                    The <a href="">improved version</a> of the project separate the large file into many components. 
+                    The <a href="https://github.com/Xesros/Xesros.github.io/tree/main/Animal_Shelter_Dashboard/Original%20Dashboard">
+                        base project</a> has two Python-based files and a Mongo database that it interfaces with. Unfortunately,
+                        in the private repository hosting the old project, I forgot to include the data. This time included the data file in the project.
+                    The project is very monolithic in its structure. There is a file that handles base CRUD operations, and a second file that handles everything else. 
+                    The <a href="https://github.com/Xesros/Xesros.github.io/tree/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard">
+                        improved version</a> of the project separate the large file into many components. 
                     I accomplished this by utilizing the MEAN stack. 
                     The software suite includes MongoDB, Express, Angular, and Node.js. All javascript language based software.
                     By pivoting, I can utilize a flexible and widely supported framework to create an equivalent front-end while reducing potential technical debt.</p>
@@ -59,11 +61,17 @@
                     (CSS, HTML, Angular components, Data files, Express, and the App Api components). 
                     Express enables me to create CRUD operations and route API calls that the web application will rely on to supply the interface with data. 
                     These calls are possible by Cross Origin Resource Sharing. 
+                    Next, the Angular front-end is responsible for making RESTful API calls to the express server and populating the components with data.
+                    I shifted the front-end components of the map and the chart to the side of the list. This fits better overall as 
+                    screens tend to have more width than height.</P>
+                    <p>
                     I’ve also incorporated security middleware that prevents unauthorized modification of the database. 
                     A user must be logged in before being able to add, edit, and or delete database documents.
-                    This modification is implemented with <a href="">JSON web tokens.</a> 
-                    Lastly, I shifted the front-end components of the map and the chart to the side of the list. This fits better overall as 
-                    screens tend to have more width than height.</P>
+                    This modification is implemented with <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/models/user.js">
+                        JSON web tokens.</a> 
+                    Lastly, I wanted to integrate security by design. Besides the middleware, the database is built by the project to populate it with a 
+                defined schema. There is a script that loads the data adhering to the schema into the database. As a verified user makes changes to the collection, the forms have validators incorporated into the page. Lastly, I 
+                    shifted to server sided pagination for get calls. However, this is explained more in the <a href="artifact_3.html">database</a> section.</P>
 
         
             </section>
@@ -72,7 +80,9 @@
                 <p>The process of reconstructing an artifact, but a different software stack is somewhat disorienting. 
                     While I have the direction and similar goals, knowing how to implement tools to meet said goals take some time. 
                     The MEAN stack is, as I said many times, very flexible and widely supported, so finding the right tools to use as components in this application requires some comparison. 
-                    I do not want to use one tool because I am comfortable with it, I’d rather use a tool that is better suited for the task at hand. </p>
+                    I do not want to use one tool because I am comfortable with it, I’d rather use a tool that is better suited for the task at hand. 
+                    I ended up settling with Mat-Data-Tables, leaflet for the map, and CanvasJS for the data chart.</p>
+                    
                 <p>However, this is a daunting process of Trial and Error. Inevitably, I spent much of time trying different components and reading documentation to find the better match for the application. 
                     I’ve run into many problems in development concerning component functionality, data conversion, routing capabilities, and capability between components. My inexperience with some of the tools and dependencies caused many of these issues. 
                     In the end, this is a way to improve my own skills and knowledge while executing my enhancements.  </p>
@@ -81,10 +91,112 @@
                     There is more control and more space to extend the functionality of the web application in the future.</p>
                 <p></p>
             </section>
-
+            
             <section id="How to">
+                <h2>How To </h2>
+                <h6>Dependencies</h6>
+                <p>This project relies on the MEAN stack, so installation of each is integral to operation. The versions used in this project are:</p>
+                    <div class="box">
+                    <ul>
+                        <li>Angular/cli@22.1.2</li>
+                        <li>bootstrap@5.3.8</li>
+                        <li>express-generator@4.16.1</li>
+                        <li>jquery@4.0.0</li>
+                        <li>node 24.14.0</li>
+                        <li>npm 12.12.1</li>
+                        <li>postman or a tool to craft http calls.</li>
+                    </ul>
+                    </div>
+                <h6>Instructions</h6>
+                <ul>
+					<li>After downloading the files, there is still some configuration to be made to run locally. 
+                        While having the necessary services running. 
+                        Navigate to the project's root folder in a terminal.</li>
+                        <div class="box">
+						    <p> The first thing to do is to seed the database. This is done by running the script: node .\app_server\models\seed . 
+                                Next is to configure the .env file. If not present, create the file in the root directory and add the line "JWT_Secret=yoursecretcodehere". 
+                            This is for creating a token for the security middleware.</p>
+                            <span class="image fit"><img src="assets/images/dotenv.png"/> 
+                            <h6>.env config</h6></span>
+                            
+                            <p>
+                                Add users with postman by loading a post request to http://localhost:3000/api/register follow the user schema. 
+                                If you are unsure if the changes are working, test with postman to the routes http://localhost:3000/api/login .</p>
+                            <span class="image fit"><img src="assets/images/postman_register.png"/> 
+                            <h6>Postman Register Call</h6></span>
+						</div>
+					<li>With data loaded and the user registered, start the express server by navigating to the root folder and enter 'npm start'. 
+                        <div class="box">
+						    <p>This will initial the backend for data routing and handle api calls between the frontend and the database.</p>
+                            <span class="image fit"><img src="assets/images/start_express.png"/> 
+                            <h6>start express server</h6></span>
+                            
+                            <p>In a separate terminal window, navigate to the root folder and enter the app_admin folder. 
+                                Here enter 'ng serve' to build and run the angular frontend.
+                                </p>
+                            <span class="image fit"><img src="assets/images/start_angular.png"/> 
+                            <h6>start angular front-end</h6></span>
+						</div> 
+                    </li>
+					<li>Now in your web browser, navigate to http://localhost:4200/. This is for local hosting, otherwise the application can be configured to on a different address.
+                        <div class="box">
+						    <p> At this point you will see the main dashboard. 
+                                There should already be entries loaded into the list as on start up the app calls for data. 
+                                Without logging in, you are capable of reading data.</p>
+                            <span class="image fit"><img src="assets/images/shelter_homepage.png"/> 
+                            <h6>Shelter Homepage</h6></span>
+						</div> 
+                    </li>
+					<li>Click log in near the top left of the screen and enter your credentials. 
+                        <div class="box">
+						    <p></p>
+                            <span class="image fit"><img src="assets/images/Dash_Login.png"/> 
+                            <h6>Log in component.</h6></span>
 
+                        When logged in you are now capable of creating entries, editing entries, and deleting entries. 
+                        These components/funcitonality are hidden until the user logs in.
+						    <p></p>
+                            <span class="image fit"><img src="assets/images/Shelter_Dash_Logged_In.png"/> 
+                            <h6>Exposes the add animal button and extends functionality.</h6></span>
+                        </div>
+                    </li>
+                    <li>Click on add animal to create a new entry. Be sure to fill all data entries.
+                        <div class="box">
+                            <span class="image fit"><img src="assets/images/add_animals_form_filled.png"/> 
+                            <h6>Add Animal Form</h6></span>
+                            Navigate to your entry with the paginator on the top right of the list to get to the end.
+                            <span class="image fit"><img src="assets/images/last_page_paginator.png"/> 
+                            <h6>Paginator</h6></span>
+                            Here is our example entry.
+                            <span class="image fit"><img src="assets/images/new_entry_example.png"/> 
+                                <h6>New Entry.</h6></span>
+						</div> 
+                    </li>
+                    <li>As a logged in user, you can click on entries to access the edit and delete page.
+                        <div class="box">
+                            <span class="image fit"><img src="assets/images/edit_delete_example.png"/> 
+                            <h6>Edit Animal Form</h6></span>
+                            This allows you to change data of document present in the database. 
+                            Hit save to save changes or delete to remove the document from the collection.
+                            <span class="image fit"><img src="assets/images/deleted_new_entry.png"/> 
+                            <h6>Entry Deleted.</h6></span>
+						</div> 
+                    </li>
+                    <li>
+                        <p>[Note] Sometimes, the login may bug out UI wise. Clicking the log in button again should refresh the page state.</p>
+                    </li>
+                    <li>
+                        <p>As you navigate through the pages, the map will automatically update to load the location on it as markers. 
+                            You can zoom in and out. You can also move the map around.
+                        </p>
+                        <div class="box">
+                        <span class="image fit"><img src="assets/images/map_markers.png"/> 
+                            <h6>Markers on Map</h6></span>
+                        </div>
+                    </li>
+				</ul>
             </section>
+            
         </div>
 
             <!-- Scripts -->

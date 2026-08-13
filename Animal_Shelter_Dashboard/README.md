@@ -1,7 +1,7 @@
 # Shelter_Dashboard
 
 ## About
-This goal of this project is build a web application that provides a data dashboard interface to workers at an animal shelter. The dashboard must pull data from a Mongo database. 
+This goal of this project is build a web application that provides a data dashboard interface to workers at an animal shelter. The dashboard must pull data from a Mongo database. Users are expected to navigate the pages for data they need for their tasks.
 
 ## Differences - Enhancements
 ###### Software Design and Engineering
@@ -29,7 +29,7 @@ This project relies on the MEAN stack, so installation of each is integral to op
         * If you are unsure if the changes are working, Test with postman to the routes http://localhost:3000/api/login
 2. With data loaded and the user registered, start the express server by navigating to the root folder and enter 'npm start'
     1. This will initial the backend for data routing and handle api calls between the frontend and the database.
-3. In a separate terminal window, navigate to the root folder and enter the app_admin folder. Here enter 'ng serve' to build and run the angular frontend.
+3. In a separate terminal window, navigate to the root folder and enter the app_admin folder. Here enter 'ng serve' to build and run the angular frontend in developer mode.
 4. Now in your web browser, navigate to http://localhost:4200/. This is for local hosting, otherwise the application can be configured to on a different address. 
 5. At this point you will see the main dashboard. There should already be entries loaded into the list as on start up the app calls for data. Without logging in, you are capable of reading data.
 6. Click log in and enter your credentials. 
