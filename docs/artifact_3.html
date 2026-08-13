@@ -40,37 +40,53 @@
                     This interface was comprised of three aspects, a list component that displayed specific entries, a pie chart that would display some analytic information, and a map that utilizes the geolocation data in the database. 
                     The user is capable of sorting and filtering data from the interface. 
                     This would enable the user to find specific information that they would need to complete their tasks of some sort.
-                    For more details and direct access to files about this project go <a>here</a>. </p>
-          
+                    For more details and direct access to files about this project go <a href="https://github.com/Xesros/Xesros.github.io/tree/main/Animal_Shelter_Dashboard">here</a>. </p>
+                <span class="image fit"><img src="assets/images/shelter_homepage.png"/></span>
             </section>
             <section id="Category">
                 <h2>Purpose</h2>
                 <p>This item was chosen because the initial project is a small-scale full-scale stack application. 
                     In particular, this application interfaces with a Mongo Database. 
                     The way this initial project handles database interaction is rather direct. 
-                    The program connects directly with sensitive data hardcoded into the CRUD operations module. 
+                    The program connects directly with <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Original%20Dashboard/CRUD_Python_Module.py">sensitive data hardcoded</a> into the CRUD operations module. 
                     The CRUD operations exist on a base module level, but the front-end is only capable of reading data. 
                     Furthermore, the second python module is monolithic and handles everything else like querying the database, each component, and the html of the web page. 
-                    For my enhancements, I extended the CRUD operations to the front-end via an Express server API call that is utilized by Angular frontend in a single page application. 
+                    For my enhancements, I extended the CRUD operations to the front-end via api calls to an <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/controllers/animals">Express server</a>
+                     that is utilized by an <a href="https://github.com/Xesros/Xesros.github.io/tree/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin">Angular frontend</a> in a single page application. 
                     I also decoupled these components into separate modules.</p>
                 <P>Now that the user is capable of the rest of the other operations such as create, update, and delete, I added protections. 
-                    These protections come in the form of validators for adding and updating a document, so that they follow the appropriate database schema. 
+                    <span class="image right"><a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/routes/index.js"><img src="assets/images/api_routes_secured.png"/></a>
+                    <h6>By appending the authentication to the route, the action cannot be done unless the user is verified.</h6></span>
+                    These protections come in the form of validators for <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin/src/app/add-animal/add-animal.ts">adding </a>
+                    and <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin/src/app/edit-animal/edit-animal.ts">updating</a>
+                     a document, so that they follow the appropriate database schema. 
                     I also added security with JSON web tokens, so a user be logged in before being able to perform actions that can change the database documents. 
                     Even if they manage to somehow access the components, their request would be rejected due to their lack of authentication and authorization.</P>
                 <p>Lastly, I wanted to improve the performance of the application. I decided to use aggregation to implement server sided pagination. 
                     There are 10,000 documents present in this database. While having all documents present is convenient for front-end interaction, it is still very costly. 
                     The lag/strain from bulk loading everything at once is noticeable. 
                     Especially in development as I constantly adjust the project, refreshing, and restarting components. 
+                    
                     The get API call time would range from 200 to over 300 milliseconds on my system (an expensive desktop). 
                     By adding server sided pagination, I do not load all the data at once but instead sift through it as needed on the front-end. 
                     So, while this results in frequent calls, it balances the load between the front-end and back-end. 
-                    There are more calls, but the time of each call is roughly 7 to 10 milliseconds, which is hard for a user to detect/feel. </p>
+                    There are more calls, but the time of each call is roughly 7 to 10 milliseconds, which is hard for a user to detect/feel. 
+                    </p>
+                    <hr>
+                    <h4>Images of Changes</h4>
+                    <span class="image "><img src="assets/images/pulling all.png"/>
+                    <h6>Original Query times in new app.</h6></span>
+                    
+                    <span class="image "><img src="assets/images/pagination_query.png"/>
+                    <h6>Query Times with Pagination.</h6></span>
 
-                <hr>
-                <h1>Examples of Project Improvements</h1>
-                <h3>Project Structure</h3>
-                <p>GitHub and Examples</p>
-                <p>Include Images</p>
+                    <span class="image fit"><a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin/src/app/services/animal-data.ts">
+                        <img src="assets/images/AnimalData_Service_CRUD.png"/></a>
+                    <h6>Data Service CRUD.</h6></span>
+
+                    <span class="image fit"><img src="assets/images/pagination_query.png"/>
+                    <h6>Animal Schema.</h6></span>
+                    
             </section>
             <section id="Reflection">
                 <h2>Reflection</h2>

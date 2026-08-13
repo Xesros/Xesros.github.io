@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Databases</title>
+    <title>Software D/E</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <noscript>
         <link rel="stylesheet" href="assets/css/nopscript.css" />
@@ -33,49 +33,57 @@
 
         <div id="main">
             <section class="post">
-                <header class="major"><i>Databases (Narrative)</i></header>
+                <header class="major"><i>Software Design/Engineering (Narrative)</i></header>
                 <h2>About the Project</h2>
                 <p style="text-indent: 5%;">
                     This artifact is a web application that provides employees at an animal shelter with an interface to query and view animals within their database. 
                     This interface was comprised of three aspects, a list component that displayed specific entries, a pie chart that would display some analytic information, and a map that utilizes the geolocation data in the database. 
                     The user is capable of sorting and filtering data from the interface. 
                     This would enable the user to find specific information that they would need to complete their tasks of some sort. For more details and direct access to files about this project go <a>here</a>. </p>
-          
+                    <span class="image fit"><img src="assets/images/shelter_homepage.png"/>
+                    <h6>Image of the new Dashboard</h6></span>
+                    
             </section>
             <section id="Category">
                 <h2>Purpose</h2>
                 <p>This item was chosen because the initial project is a small-scale full-scale stack application. 
-                    Full-stack development requires a board sense of knowledge and skills to properly integrate the different programs and software layers for a functioning application. The base project has two Python-based files and a Mongo database that it interfaces with. 
+                    Full-stack development requires a board sense of knowledge and skills to properly integrate the different programs and software layers for a functioning application. 
+                    The <a href="">base project</a> has two Python-based files and a Mongo database that it interfaces with. 
                     The project is very monolithic in its structure. 
                     There is a file that handles base CRUD operations, and a second file that handles everything else. 
-                    My enhancements with this artifact separate the large file into many components. 
+                    The <a href="">improved version</a> of the project separate the large file into many components. 
                     I accomplished this by utilizing the MEAN stack. 
-                    The software suite includes MongoDB, Express, Angular, and Node.js. 
+                    The software suite includes MongoDB, Express, Angular, and Node.js. All javascript language based software.
                     By pivoting, I can utilize a flexible and widely supported framework to create an equivalent front-end while reducing potential technical debt.</p>
-                <P>The design files are easier to comprehend by splitting the functionality and types to proper folders/file structure (CSS, HTML, Angular components, Data files, Express components). 
-                    Express enables me to create CRUD operations and route API calls that web application will rely on to supply the interface with data. 
+                <P>The design files are easier to comprehend by splitting the functionality and types to proper folders/file structure 
+                    (CSS, HTML, Angular components, Data files, Express, and the App Api components). 
+                    Express enables me to create CRUD operations and route API calls that the web application will rely on to supply the interface with data. 
                     These calls are possible by Cross Origin Resource Sharing. 
                     I’ve also incorporated security middleware that prevents unauthorized modification of the database. 
-                    A user must be logged in before being able to add, edit, and or delete database documents.</P>
+                    A user must be logged in before being able to add, edit, and or delete database documents.
+                    This modification is implemented with <a href="">JSON web tokens.</a> 
+                    Lastly, I shifted the front-end components of the map and the chart to the side of the list. This fits better overall as 
+                    screens tend to have more width than height.</P>
 
-                <hr>
-                <h1>Examples of Project Improvements</h1>
-                <h3>Project Structure</h3>
-                <p>GitHub and Examples</p>
-                <p>Include Images</p>
+        
             </section>
             <section id="Reflection">
+                <h2>Reflection</h2>
                 <p>The process of reconstructing an artifact, but a different software stack is somewhat disorienting. 
                     While I have the direction and similar goals, knowing how to implement tools to meet said goals take some time. 
                     The MEAN stack is, as I said many times, very flexible and widely supported, so finding the right tools to use as components in this application requires some comparison. 
-                    I do not want to use one tool because I am comfortable with, I’d rather use a tool that is better suited for the task at hand. </p>
-                <p>However, this is a daunting process of Trial and Error. 
+                    I do not want to use one tool because I am comfortable with it, I’d rather use a tool that is better suited for the task at hand. </p>
+                <p>However, this is a daunting process of Trial and Error. Inevitably, I spent much of time trying different components and reading documentation to find the better match for the application. 
                     I’ve run into many problems in development concerning component functionality, data conversion, routing capabilities, and capability between components. My inexperience with some of the tools and dependencies caused many of these issues. 
                     In the end, this is a way to improve my own skills and knowledge while executing my enhancements.  </p>
                 <p>As stated earlier, by separating the components into a reasonable size and structure, I can manage the differing aspects more easily. 
                     For comparison, the previous design in total had two modules and a database to interface with, but this new design has separated the aspects of data handling/api, HTML, CSS, database, and angular and express components into many files. 
                     There is more control and more space to extend the functionality of the web application in the future.</p>
                 <p></p>
+            </section>
+
+            <section id="How to">
+
             </section>
         </div>
 
