@@ -99,15 +99,113 @@
                 <p>Converting to server-sided pagination was one of the biggest challenges in this enhancement. 
                     Partly because of the issues mentioned above, using angular components that I am not familiar with increased the difficulty of properly utilizing the new form of aggregation database query. 
                     This reliance on the server side meant I had to tweak some of the front-end components to utilize metadata coming from the server. </p>
+                
             </section>
             <section id="Data Explanation">
                 <h2>Hot it works:</h2>
-                <p>In the <a href="artifact_1.html">Software Design/Engineering</a>, I explain how to setup the web page application. 
+                <p>In the <a href="artifact_1.html">Software Design/Engineering</a> section, I explain how to setup the web page application and how to use it. 
                 In this section, I will explain how the data is being handled in greater detail.</p>
                 
+                    <h3>Data Construction</h3>
+                        <p>A major between this project and the original is the construction of the database and models.</p>
+					    <ul>
+					        <li>The collections for this app are utilizing schemas. These schemas are used to manage the data in a specific format in json documents.
+                            <div class="box">
+                                <p>They define the values, typing of values, requirements, and indexes.</p>
+                                <span class="image fit"><a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/models/animals.js"><img src="assets/images/Animal_Schema.png"/></a>
+                                <h6>Animal Schema</h6></span>
+
+                                <span class="image fit"><a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/models/user.js"><img src="assets/images/User_Schema.png"/></a>
+
+                                <h6>User Schema</h6></span>
+                                <p>This enables me to maintain consistency of the data as it flows through the application.
+                                </p>
+                                <p>Since we now rely on the application to configure the data. We also utilize a <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/models/seed.js">script</a>
+                                     to seed the database with animals adhering to this structure. There are 10000 documents present in the animals collection.
+                                </p>
+                            </div>
+						</ul>
+
+                    <h3>Mongo Queries and Routing</h3>
+                    <p>In order to call data, an express server is used to connect to the database. This server will be in between our front-end and database.
+
+                    </p>
+                        <ul>
+                        <li>We define these queries in our api through a <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/controllers/animals.js">controller</a> file. 
+                            We export the queries for <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_api/routes/index.js">routing</a>.
+                            <div class="box">
+                                <span class="image fit"><img src="assets/images/delete_route.png"/> 
+                                <h6>Example: Delete Query.</h6></span>
+                                <span class="image fit"><img src="assets/images/api_routes.png"/> 
+                                <h6>Routes Defined in App.</h6></span>
+                                <p>These routes are what will be used to communicate request from the frontend.</p>
+                            </div>
+                        </li>
+                        </ul>
+
+                        <h3>Front-end Communication</h3>
+                        <p>Our front-end requires a <a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin/src/app/services/animal-data.ts">data service module</a> 
+                            to make requests to our express server. </p>
+                        <ul>
+						    <li>These follow a REST api structure. These requests are then tied
+                                to angular components for the user to interact with.
+
+                                <div class="box">
+                                    <span class="image fit"><img src="assets/images/AnimalData_Service_CRUD.png"/> 
+                                    <h6>Data Service using routes.</h6></span>
+
+                                    <span class="image fit"><a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin/src/app/table-grid/table-grid.ts"><img src="assets/images/table-grid-request.png"/></a>
+                                    <h6>Loading data in into Table Grid Component.</h6></span>
+
+                                    <p>In order to use the data in our Components, we need to subscribe and call the route on the data service.
+                                        This sends data to our grid which is utilized by the Angular component to make a table list.
+                                    </p>
+
+                            </div>
+                            </li>
+						</ul>
+
+                        <h3>Front-end Usage</h3>
+                        <p>In the previous section, the route being used was for loading data. This would be called on a per page basis, since 
+                            application uses server-sided pagination.
+                        </p>
+                        <ul>
+						    <li>Other components such as editing/deleting a record, rely a different route.
+
+                                <div class="box">
+                                    <span class="image fit"><a href="https://github.com/Xesros/Xesros.github.io/tree/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin/src/app/edit-animal"><img src="assets/images/edit_animal_record.png"/></a> 
+                                    <h6>While using the same form, the buttons are tied to different calls.</h6></span>
+
+                                    <span class="image fit"><a href="https://github.com/Xesros/Xesros.github.io/blob/main/Animal_Shelter_Dashboard/Enhanced%20Dashboard/app_admin/src/app/edit-animal/edit-animal.ts"><img src="assets/images/code_edit_animal.png"/></a> 
+                                    <h6>Code of different calls.</h6></span>
+                                    <p>If I wanted to expand functionality of the application, I would have to follow the process of contructing the 
+                                        back-end functionality, extend the api, and attach it to the angular app.
+                                    </p>
+
+                            </div>
+                            </li>
+						</ul>
+
             </section>
         </div>
-
+        <footer id="footer">
+						<section>
+							<h3>Social</h3>
+		    					<ul class="icons alt">
+									<li><a href="https://github.com/Xesros" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+						</section>
+                        <section>
+							<h3>Email</h3>
+							<p><a >xesros.interactive@gmail.com</a></p>
+						</section>
+        </footer>
+                    <div id="copyright">
+						<ul>
+                            <li>Site made by Xesros</li>
+                            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                        </ul>
+					</div>
             <!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>

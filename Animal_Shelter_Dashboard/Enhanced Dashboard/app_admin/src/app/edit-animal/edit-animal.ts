@@ -77,6 +77,7 @@ export class EditAnimal {
     })
   }
 
+  //Update Record
   public onSubmit()
   {
     this.submitted = true;
