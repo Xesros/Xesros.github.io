@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>ePortfolio Home</title>
+    <title>Secure Coding</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <noscript>
         <link rel="stylesheet" href="assets/css/nopscript.css" />
@@ -20,41 +20,163 @@
     
     <div id="wrapper">
         <header id="header">
-            <a href="#" class="logo"> XESROS </a>
+            <a href="index.html" class="logo"> XESROS </a>
         </header>
         <nav id="nav">
             <ul class="links">
-                <li><a href="artifact_1.html">Software Design/Engineering</a></li>
+                <li><a href="artifact_1.html">Software Design + Engineering</a></li>
                 <li><a href="artifact_2.html">Data Structures + Algorithms</a></li>
                 <li><a href="artifact_3.html">Databases</a></li>
-                <li><a href="scss.html">Secure Coding</a></li>
+                <li><a href="scss.html">Secure Coding Policy</a></li>
             </ul>
+            <ul class="icons">
+				<li><a href="https://github.com/Xesros" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
         </nav>
 
         <div id="main">
             <section class="post">
-                <header class="major"><i>Secure Coding and Standards</i></header>
+                <header class="major"><i>Secure Coding Policy</i></header>
                 <h2>About:</h2>
                 <p style="text-indent: 5%;"> </p>
-                <p>If you wish, you may follow this <a href="https://github.com/Xesros/Xesros.github.io/">link</a> to base repository of this page.
+                <p>An important aspect of computer science is being able to implement best practices into our work. A system must be designed for security
+                    from the start. Retroactively applying security can leave gaps in the armor. This page serves as a reminder to why and how programs should be 
+                    protected. 
                 </p>
             </section>
 
-        
-        </div>
+            <section id="Security Principles">
+                <h2>Security Principles</h2>
+                <!-- <p><i>From <a href="">Seacord.</a></i><br> -->
+                    <a href = "#Coding Standards">Jump to the Next Section.</a></p>
 
+					<dl>
+						<dt>Validate Input Data</dt>
+						    <dd>
+						    	<p>All types of input data must be checked and verified. 
+                                    Data that is entered which does not match the intended purpose can result in errors and unintended behavior. 
+                                    These results are exploitable. </p>
+					    	</dd>
+						<dt>Heed Compiler Warnings</dt>
+							<dd>
+								<p>Compilers are powerful tools that can provide insight into the behavior of a program should there be an issue. 
+                                    In-built warnings can assist one in developing safe and secure code. 
+                                    Be sure to check that code is not flagging any errors or warnings before compilation. </p>
+							</dd>
+						<dt>Architect and Design for Security Policies</dt>
+							<dd>
+								<p>From the start, it is imperative that all staff plan their actions to utilize best security practices. 
+                                    A secure foundation is necessary to build and maintain a secure project.  </p>
+							</dd>
+                        <dt>Keep It Simple</dt>
+							<dd>
+								<p>One module; one purpose. 
+                                    Keep the code modular. 
+                                    This ensures readability and reduces potential errors from excessive bulk.</p>
+							</dd>
+                        <dt>Default Deny</dt>
+							<dd>
+								<p>The default behavior of any program should be to deny. 
+                                    Only through verification can a user continue. 
+                                    Rejecting unilaterally can protect against unintended behaviors.</p>
+							</dd>
+                        <dt>Adhere to the Principle of Least Privilege</dt>
+							<dd>
+								<p>In terms of access, privileges should be kept at a minimum. 
+                                    If a user does not need the privilege for their tasks, then remove said privilege.
+                                     Otherwise, an individual has elevated access where they should not. </p>
+							</dd>
+                        <dt>Sanitize Data Sent to Other Systems</dt>
+							<dd>
+								<p>By properly maintaining data that is to be sent out of a system, one can ensure that information is being correctly handled. 
+                                    This will protect the data’s integrity and confidentiality in transit. 
+                                    A clean transaction.</p>
+							</dd>
+                        <dt>Practice Defense in Depth</dt>
+							<dd>
+								<p>One defensive tactic is not enough. 
+                                    There are many attack surfaces that could be exploited. 
+                                    Utilize a layered defense of many techniques that fit the circumstance. 
+                                    If an attacker manages to get past one, then their progress will only be met with another defensive line. </p>
+							</dd>
+                        <dt>Use Effective Quality Assurance Techniques</dt>
+							<dd>
+								<p>There are many assist tools and practices that can ensure quality throughout projects. 
+                                    By utilizing powerful tools of automation and test cases, one can definitively prove that their work is operating as intended. </p>
+							</dd>
+                        <dt>Adopt a Secure Coding Standard</dt>
+							<dd>
+								<p>Security and bugs in code have been well documented. 
+                                    Many exploits have been met and resolved as programming has matured. 
+                                    Incidents tend to be the result of the lack of a Secure Coding Standard.</p>
+							</dd>
+					</dl>
+                    <p><a href = "#Security Principles">Jump to the Top of the Section.</a></p>
+            </section>
+            <section id="Coding Standards">
+                <h2>Coding Standards</h2>
+                <p>Coding standards are important reference materials to guide you in the development process. Chances are a security vulnerability that one is dealing 
+                    with has already been dealt before. There are ways to detect common vulnerabilities and anti-patterns in your program with static analysis tools. 
+                    Depending on the programming language, the coding standard will have its quirks to match the behavior of the language. There may also be a coninciding 
+                    style guide to one maintain a consistent format with other developers.
+                </p>
+                <h4>List of Coding Standards.</h4>
+                <ul>
+				    <li><a href="https://cmu-sei.github.io/secure-coding-standards/sei-cert-cpp-coding-standard/">C++ Coding Standard from SEI CERT</a></li>
+					<li><a href="https://best.openssf.org/Secure-Coding-Guide-for-Python/">Python Guide from OpenSSF</a></li>
+					<li><a href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/">JavaScript Coding Standards from WordPress</a></li>
+					<li><a href="https://www.oracle.com/java/technologies/javase/seccodeguide.html">Secure Coding Guidelines for Java from Oracle</a></li>
+				</ul>
+            </section>
+            <section id="Encryption Policy">
+                <h2>Encryption Policy</h2>
+                <h4>Encryption at Rest</h4>
+                <blockquote>Data at rest means when data is sitting in storage. 
+                    Encrypting this data in storage will prevent any threat actors from being able to actually read the data. 
+                    In the event of a breach, even if this data is acquired, it should still be safe as the hacker lacks the key to decrypt the information hidden. </blockquote>
+                
+                <h4>Encryption in Flight</h4>
+                <blockquote>Data in flight means when the data is being sent to and, or from two endpoints. 
+                    Encrypting data in this state prevents threat actors who may have intercepted this data from being able to read the data. 
+                    Without the key to decrypt, the data remains protected. </blockquote>
+
+                <h4>Encryption in Use</h4>
+                <blockquote>Data in use means when a process/system is utilizing data. 
+                    Active data, even if it changes, is considered to be the most vulnerable. 
+                    It is integral to security to encrypt data throughout the process as threat actors may exploit this vulnerability.  </blockquote>
+            </section>
+
+            <section id="Triple A Framework">
+                <h2>Triple-A Framework</h2>
+                <h4>Authentication</h4>
+                <blockquote>Authentication is how we identify a user is truly who they are logging in as. 
+                    Commonly, two-factor-authentication is implemented upon logins and account creations. 
+                    By utilizing what a user knows (login credentials) and what a user has (i.e. access to an email), we can tighten the authentication process for better security. </blockquote>
+                <h4>Authorization</h4>
+                <blockquote>Even if a user logs into a user, they cannot do anything without being authorized to do so. 
+                    Authorization is the permitting of access to a user account. 
+                    It is important to follow strict access-control to prevent a user from accessing objects that they should not be around. 
+                    This will limit the impact of a compromised account as they have reduced authorization to a system. </blockquote>
+                <h4>Accounting</h4>
+                <blockquote>Accounting is logging all instances of user actions in a system. 
+                    By documenting each action, we can trace the steps of all users to the system. 
+                    We can read the time they logged in, what files were accessed, and what operations they took to do so. 
+                    Anomalies in a user’s actions may indicate that a breach has occurred due to erroneous or scripted behavior. 
+                    Accounting allows us to vet the user for further confirmation. </blockquote>
+                    <p><a href = "#main">Jump to Top of the Page.</a></p>
+            </section>
+            
+        </div>
+        
     </div>
 
         <footer id="footer">
 						<section>
-							<h3>Social</h3>
+							<h3>Social | Email</h3>
 		    					<ul class="icons alt">
-									<li><a href="https://github.com/Xesros" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://github.com/Xesros" class="icon brands alt fa-github"><span class="label">GitHub</span></a> 
+                                        | xesros.interactive@gmail.com</li>
 								</ul>
-						</section>
-                        <section>
-							<h3>Email</h3>
-							<p><a >xesros.interactive@gmail.com</a></p>
 						</section>
         </footer>
         <div id="copyright">
